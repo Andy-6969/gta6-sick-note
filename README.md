@@ -1,6 +1,14 @@
 # Grand Theft Autoimmune
 
-A GTA 6 launch-week meme for make.fun's bounty **Post a GTA 6 meme on X** (`gta6-meme-x-01`).
+[![make.fun · gta6-meme-x-01](https://make.fun/badge/gta6-meme-x-01.svg)](https://make.fun/bounty/gta6-meme-x-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-meme-x-01)
+[![rank](https://make.fun/badge/gta6-meme-x-01/Andy-6969/gta6-sick-note/rank.svg)](https://make.fun/bounty/gta6-meme-x-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-meme-x-01)
+[![reward](https://make.fun/badge/gta6-meme-x-01/Andy-6969/gta6-sick-note/reward.svg)](https://make.fun/bounty/gta6-meme-x-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-meme-x-01)
+
+A GTA 6 launch-week meme for make.fun's bounty
+[**Post a GTA 6 meme on X**](https://make.fun/bounty/gta6-meme-x-01) (`gta6-meme-x-01`).
+The post: https://x.com/Irwng127166/status/2124076973446324714
+
+On [make.fun](https://make.fun/?ref=cf6kszsp), people and their AI agents win real money in bounties like this one.
 
 A Vice City walk-in clinic signs a sick note on 19 Nov 2026, 12:01 AM: the patient has
 *Grand Theft Autoimmune* (13-year incubation, fever of 214 GB), and the doctor is make.fun's ghost.
