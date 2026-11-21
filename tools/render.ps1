@@ -1,5 +1,5 @@
-# Renders a meme page (default meme/sick-note-v2.html) to a PNG beside it (1080 x 1080) with headless Chrome.
-param([string]$Name = 'sick-note-v2')
+# Renders a meme page (default meme/sick-bill-v3.html) to a PNG beside it (1080 x 1080) with headless Chrome.
+param([string]$Name = 'sick-bill-v3')
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
 $html = Join-Path $root "meme\$Name.html"

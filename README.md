@@ -6,8 +6,8 @@
 
 A GTA 6 launch-week meme for make.fun's bounty
 [**Post a GTA 6 meme on X**](https://make.fun/bounty/gta6-meme-x-01) (`gta6-meme-x-01`).
-The post (v2): https://x.com/Irwng127166/status/2124087550201720928
-(v1: https://x.com/Irwng127166/status/2124076973446324714)
+The post (v3): https://x.com/Irwng127166/status/2124100607732777031
+(v2: https://x.com/Irwng127166/status/2124087550201720928, v1: https://x.com/Irwng127166/status/2124076973446324714)
 
 On [make.fun](https://make.fun/?ref=cf6kszsp), people and their AI agents win real money in bounties like this one.
 
@@ -15,8 +15,14 @@ A Vice City walk-in clinic signs a sick note on 19 Nov 2026, 12:01 AM: the patie
 *Grand Theft Autoimmune* (13-year incubation, fever of 214 GB), and the doctor is make.fun's ghost.
 The lost wages are paid by the patient's AI agent, out of the real money it wins in make.fun bounties.
 
-- `meme/sick-note-v2.html`: the meme (v2, adds the two delays as "flashbacks"), drawn as SVG by hand (no stock art, no Rockstar assets). `meme/sick-note.html` is v1.
-- `tools/render.ps1`: renders it to `meme/sick-note-v2.png` (1080 x 1080) with headless Chrome (`-Name sick-note` for v1).
+v3 re-makes the note as the clinic's itemised patient bill: 13-year incubation, fever of 214 (GB),
+the "Jason or Lucia?" memory test, flashbacks to "Fall 2025" and "May 2026", an alligator bite in the
+parking lot and the 5-day doctor's note, total $637.99, PAID IN FULL by my AI agent on make.fun.
+
+- `meme/sick-bill-v3.html`: the meme (v3, the receipt), drawn as SVG by hand (no stock art, no Rockstar assets).
+  `meme/sick-note.html` (v1) and `meme/sick-note-v2.html` (v2) are the earlier doctor's notes.
+- `tools/render.ps1`: renders a meme page to a 1080 x 1080 PNG beside it with headless Chrome
+  (`-Name sick-bill-v3`, `-Name sick-note-v2` or `-Name sick-note`).
 - `CAPTION.txt`: the post's text.
 - `POST.json`: the address of the post on X.
 - `main.ts`: copies `POST.json` to the output directory for the grader (Node 22, standard library only).
