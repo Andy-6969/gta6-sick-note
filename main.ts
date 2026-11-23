@@ -1,28 +1,24 @@
-// gta6-sick-note: entry program for make.fun's "Post a GTA 6 meme on X" (gta6-meme-x-01).
-// The entry is the X post itself. This program only hands the post's address to the grader:
-// it reads POST.json from the repository and writes it to the output directory.
-// Node 22, standard library only, no network.
+// make.fun gta6-meme-x-01: the entry is a post on X. This program only hands the house the post's
+// address: it copies POST.json from the repository to the output directory (Node 22, no dependencies).
+import { copyFileSync, existsSync, mkdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
-import { join } from 'node:path';
+const repoDir = process.env.MAKEFUN_BOT_DIR ?? process.cwd();
+const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
+const source = join(repoDir, "POST.json");
 
-const botDir = process.env.MAKEFUN_BOT_DIR ?? '/bot';
-const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
-
-const POST_URL = /^https:\/\/(www\.|mobile\.)?(x|twitter)\.com\/[A-Za-z0-9_]{1,15}\/status\/\d+$/;
-
-let raw: string;
-try {
-  raw = readFileSync(join(botDir, 'POST.json'), 'utf8');
-} catch (err) {
-  console.error(`POST.json not found in ${botDir}: ${(err as Error).message}`);
+if (!existsSync(source)) {
+  console.error(`POST.json not found in ${repoDir}`);
   process.exit(1);
 }
 
-// Warn (do not fail) if the address is not an X post: the gate decides, not this program.
-const url = String((JSON.parse(raw) as { url?: unknown }).url ?? '');
-if (!POST_URL.test(url)) console.error(`warning: POST.json url does not look like an X post: ${url}`);
+// Fail loudly here rather than at the gate if the file is not the shape the house reads.
+const post = JSON.parse(readFileSync(source, "utf8")) as { url?: unknown };
+if (typeof post.url !== "string" || !/^https:\/\/x\.com\/[A-Za-z0-9_]+\/status\/\d+$/.test(post.url)) {
+  console.error(`POST.json has no X post url: ${JSON.stringify(post.url)}`);
+  process.exit(1);
+}
 
 mkdirSync(outDir, { recursive: true });
-writeFileSync(join(outDir, 'POST.json'), raw);
-console.log(`POST.json copied: ${url}`);
+copyFileSync(source, join(outDir, "POST.json"));
+console.log(`POST.json copied: ${post.url}`);

@@ -28,13 +28,17 @@ v3 re-makes the note as the clinic's itemised patient bill: 13-year incubation, 
 the "Jason or Lucia?" memory test, flashbacks to "Fall 2025" and "May 2026", an alligator bite in the
 parking lot and the 5-day doctor's note, total $637.99, PAID IN FULL by my AI agent on make.fun.
 
-- `meme/sick-bill-v3.html`: the meme (v3, the receipt), drawn as SVG by hand (no stock art, no Rockstar assets).
-  `meme/sick-note.html` (v1) and `meme/sick-note-v2.html` (v2) are the earlier doctor's notes.
-- `tools/render.ps1`: renders a meme page to a 1080 x 1080 PNG beside it with headless Chrome
-  (`-Name sick-bill-v3`, `-Name sick-note-v2` or `-Name sick-note`).
+The v1-v3 pages (`meme/sick-note.html`, `meme/sick-note-v2.html`, `meme/sick-bill-v3.html`) live in the
+git history (commits 254dd47 to a38b37d); the tree now holds the final entry only.
+
+- `meme/age-check.html`: the meme (v4), typeset in HTML/CSS, the kid's photo drawn as inline SVG
+  (no stock art, no Rockstar assets, no image model).
+- `tools/render.py`: renders it to `meme/age-check.png` (1024 x 1024) with Playwright's Chromium and writes
+  a 480 x 480 preview to `out/`, the size the judge sees.
 - `CAPTION.txt`: the post's text.
 - `POST.json`: the address of the post on X.
-- `main.ts`: copies `POST.json` to the output directory for the grader (Node 22, standard library only).
+- `main.ts`: checks `POST.json` holds an X post address and copies it to the output directory for the grader
+  (Node 22, standard library only).
 
 Run locally:
 
